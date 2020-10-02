@@ -22,6 +22,18 @@ new mode 100755
 diff --git a/node_modules/fullpage-vue/dist/fullpage.js b/node_modules/fullpage-vue/dist/fullpage.js
 old mode 100644
 new mode 100755
+index 0750dc3..a70fb54
+--- a/node_modules/fullpage-vue/dist/fullpage.js
++++ b/node_modules/fullpage-vue/dist/fullpage.js
+@@ -106,7 +106,7 @@ var Fullpage = function () {
+         this.initScrollDirection();
+         this.initEvent(el);
+         window.setTimeout(function () {
+-            console.log('init', _this);
++            // console.log('init', _this);
+             _this.resize();
+             var startIndex = _this.opts.start;
+             //The first page triggers the animation directly
 diff --git a/node_modules/fullpage-vue/docs/api.md b/node_modules/fullpage-vue/docs/api.md
 old mode 100644
 new mode 100755
