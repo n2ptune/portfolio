@@ -42,6 +42,15 @@ export default Vue.extend({
 </script>
 
 <style lang="postcss" scoped>
-.fullpage-wp {
+.page {
+  &.page-1 {
+    @apply bg-red-300;
+  }
+  &.page-2 {
+    @apply bg-purple-300;
+  }
+  &.page-3 {
+    @apply bg-green-300;
+  }
 }
 </style>
