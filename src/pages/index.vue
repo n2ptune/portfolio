@@ -1,9 +1,9 @@
 <template>
-  <client-only>
+  <!-- <client-only>
     <div class="fullpage-container">
       <button class="next" @click="moveNext">Move Next</button>
       <div ref="example" v-fullpage="opts" class="fullpage-wp">
-        <div class="page-1 page">
+        <div class="page">
           <p class="part-1">fullpage-vue</p>
         </div>
         <div class="page-2 page">
@@ -16,23 +16,26 @@
         </div>
       </div>
     </div>
-  </client-only>
+  </client-only> -->
+  <Container />
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import Container from '@/components/fullpage/Container.vue'
 
 export default Vue.extend({
+  components: {
+    Container
+  },
+
   data() {
     return {
       opts: {
-        start: 0,
         dir: 'v',
-        duration: 5500,
-        der: 1,
         // @ts-ignore
-        beforeChange: (prev, next) => {
-          console.log(prev, next)
+        beforeChange: (currentSlideEL, prev, next) => {
+          console.log(currentSlideEL, prev, next)
         }
       }
     }
