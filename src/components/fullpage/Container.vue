@@ -1,5 +1,5 @@
 <template>
-  <client-only placeholder="Loading...">
+  <client-only>
     <div class="fullpage-container">
       <div ref="fp" v-fullpage="options" class="fullpage-wp">
         <component :is="page" v-for="(page, index) in pages" :key="index" />
@@ -29,7 +29,7 @@ export default Vue.extend({
 
   computed: {
     pages() {
-      return [Intro, Intro]
+      return [Intro]
     }
   }
 })
