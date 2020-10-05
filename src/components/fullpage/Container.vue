@@ -1,9 +1,8 @@
 <template>
   <client-only placeholder="Loading...">
     <div class="fullpage-container">
-      <div class="fullpage-wp" v-fullpage="options" ref="fp">
-        <!-- pages -->
-        <Intro :key="0" />
+      <div ref="fp" v-fullpage="options" class="fullpage-wp">
+        <component :is="page" v-for="(page, index) in pages" :key="index" />
       </div>
     </div>
   </client-only>
@@ -21,14 +20,16 @@ export default Vue.extend({
   data() {
     return {
       options: {
-        beforeChange: function (
-          el: HTMLElement,
-          current: number,
-          next: number
-        ) {
-          console.log(el, current, next)
+        beforeChange(el: HTMLElement, current: number, next: number) {
+          console.warn(el, current, next)
         }
       }
+    }
+  },
+
+  computed: {
+    pages() {
+      return [Intro, Intro]
     }
   }
 })
