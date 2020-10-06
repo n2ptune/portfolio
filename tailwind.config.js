@@ -17,7 +17,36 @@ module.exports = {
           800: '#2C2C2C',
           900: '#232323',
           1000: '#1B1B1B'
+        },
+        dark: {
+          surface: '#121212'
+        },
+        white: {
+          100: 'rgba(255, 255, 255, 0)',
+          200: 'rgba(255, 255, 255, 0.05)',
+          300: 'rgba(255, 255, 255, 0.07)',
+          400: 'rgba(255, 255, 255, 0.08)',
+          500: 'rgba(255, 255, 255, 0.09)',
+          600: 'rgba(255, 255, 255, 0.11)',
+          700: 'rgba(255, 255, 255, 0.12)',
+          800: 'rgba(255, 255, 255, 0.14)',
+          900: 'rgba(255, 255, 255, 0.15)',
+          1000: 'rgba(255, 255, 255, 0.16)',
+          max: 'rgba(255, 255, 255, 0.78)'
         }
+      },
+      fontFamily: {
+        sans: [
+          '-apple-system',
+          'Roboto',
+          '"Noto Sans"',
+          '"Noto Sans KR"',
+          'sans-serif',
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Noto Color Emoji"'
+        ]
       }
     }
   }
