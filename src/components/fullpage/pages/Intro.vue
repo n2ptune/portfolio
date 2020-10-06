@@ -42,6 +42,10 @@ import PageLayout from '@/components/fullpage/PageLayout.vue'
 export default Vue.extend({
   components: {
     PageLayout
+  },
+
+  mounted() {
+    document.body.style.backgroundColor = '#121212'
   }
 })
 </script>

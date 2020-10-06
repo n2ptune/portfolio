@@ -39,7 +39,7 @@ export default Vue.extend({
   right: 8px;
   transform: translateY(40%);
 
-  @apply fixed h-full z-50 text-white-max;
+  @apply fixed h-full z-50 text-white-max overflow-hidden;
 
   &-button {
     --steps-button-size: 6px;
