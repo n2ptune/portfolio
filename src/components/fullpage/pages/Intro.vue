@@ -29,8 +29,14 @@
           </div>
         </div>
       </div>
-      <!-- <div class="break"></div>
-      <div class="mx-auto">Hello</div> -->
+      <div class="break"></div>
+      <div class="scroll-indicator">
+        <div
+          class="relative px-2 py-6 rounded-full border-2 border-white-full bottom-0"
+        >
+          <div class="scroll-indicator-inner"></div>
+        </div>
+      </div>
     </div>
   </PageLayout>
 </template>
@@ -68,6 +74,41 @@ export default Vue.extend({
 
     &:hover {
       color: white;
+    }
+  }
+
+  & .scroll-indicator {
+    @apply mx-auto self-end absolute;
+
+    bottom: 30px;
+    right: 30px;
+
+    @screen md {
+      @apply relative bottom-auto right-auto;
+    }
+
+    & .scroll-indicator-inner {
+      --inner-ball-size: 0.3rem;
+
+      width: var(--inner-ball-size);
+      height: var(--inner-ball-size);
+      left: calc(65% - var(--inner-ball-size));
+      top: 10px;
+      animation-name: dropToBottom;
+      animation-iteration-count: infinite;
+      animation-duration: 2s;
+
+      @apply absolute rounded-full bg-white-max;
+
+      @keyframes dropToBottom {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(500%);
+        }
+      }
     }
   }
 }
