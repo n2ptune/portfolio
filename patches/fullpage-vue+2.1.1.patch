@@ -22,7 +22,7 @@ new mode 100755
 diff --git a/node_modules/fullpage-vue/dist/fullpage.js b/node_modules/fullpage-vue/dist/fullpage.js
 old mode 100644
 new mode 100755
-index 0750dc3..a70fb54
+index 0750dc3..20fcb50
 --- a/node_modules/fullpage-vue/dist/fullpage.js
 +++ b/node_modules/fullpage-vue/dist/fullpage.js
 @@ -106,7 +106,7 @@ var Fullpage = function () {
@@ -34,6 +34,19 @@ index 0750dc3..a70fb54
              _this.resize();
              var startIndex = _this.opts.start;
              //The first page triggers the animation directly
+@@ -119,8 +119,10 @@ var Fullpage = function () {
+     createClass(Fullpage, [{
+         key: "resize",
+         value: function resize() {
+-            this.width = this.opts.width || this.el.offsetWidth;
+-            this.height = this.opts.height || this.el.offsetHeight;
++            // this.width = this.opts.width || this.el.offsetWidth;
++            // this.height = this.opts.height || this.el.offsetHeight;
++            this.width = this.opts.width || window.innerWidth;
++            this.height = this.opts.height || window.innerHeight;
+ 
+             var i = 0,
+                 length = this.pageEles.length,
 diff --git a/node_modules/fullpage-vue/docs/api.md b/node_modules/fullpage-vue/docs/api.md
 old mode 100644
 new mode 100755

@@ -1,7 +1,7 @@
 <template>
   <PageLayout :key="$vnode.key">
     <div class="intro-outer">
-      <div class="text-4xl lg:text-6xl font-bold leading-tight">
+      <div class="title">
         <p>2020</p>
         <p>프론트엔드 개발자</p>
         <p>포트폴리오</p>
@@ -48,21 +48,17 @@ import PageLayout from '@/components/fullpage/PageLayout.vue'
 export default Vue.extend({
   components: {
     PageLayout
-  },
-
-  mounted() {
-    document.body.style.backgroundColor = '#121212'
   }
 })
 </script>
 
 <style lang="postcss" scoped>
-.page {
-  @apply bg-dark-surface text-white-max;
-}
-
 .intro-outer {
-  @apply flex flex-wrap h-full p-4 relative justify-between flex-col;
+  @apply flex flex-wrap h-full relative justify-between flex-col;
+
+  @screen md {
+    @apply flex-row;
+  }
 
   & .break {
     flex-basis: 100%;
@@ -110,18 +106,6 @@ export default Vue.extend({
         }
       }
     }
-  }
-}
-
-@screen md {
-  .intro-outer {
-    @apply p-6 flex-row;
-  }
-}
-
-@screen lg {
-  .intro-outer {
-    @apply p-24;
   }
 }
 </style>

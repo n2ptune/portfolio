@@ -12,11 +12,13 @@
 <script lang="ts">
 import Vue from 'vue'
 import Intro from '@/components/fullpage/pages/Intro.vue'
+import Information from '@/components/fullpage/pages/Information.vue'
 import Steps from '@/components/fullpage/Steps.vue'
 
 export default Vue.extend({
   components: {
     Intro,
+    Information,
     Steps
   },
 
@@ -29,7 +31,7 @@ export default Vue.extend({
 
   computed: {
     pages() {
-      return [Intro, Intro, Intro, Intro, Intro]
+      return [Intro, Information]
     }
   },
 

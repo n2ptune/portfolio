@@ -1,6 +1,9 @@
 import { resolve } from 'path'
 
 export default {
+  server: {
+    host: '0'
+  },
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 
