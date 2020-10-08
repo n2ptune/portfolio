@@ -1,0 +1,17 @@
+.fade-in-out {
+  &-enter-active,
+  &-leave-active {
+    transition-delay: 500ms;
+    transition: opacity 0.7s ease;
+  }
+
+  &-enter,
+  &-leave-to {
+    @apply opacity-0;
+  }
+
+  &-enter-to,
+  &-leave {
+    @apply opacity-100;
+  }
+}
