@@ -3,7 +3,12 @@
     <div class="fullpage-container">
       <Steps :idx="currentIndex" :range="pages.length" @moveTo="moveTo" />
       <div ref="fp" v-fullpage="opts" class="fullpage-wp">
-        <component :is="page" v-for="(page, index) in pages" :key="index" />
+        <component
+          :is="page"
+          v-for="(page, index) in pages"
+          :key="index"
+          :active="currentIndex === index"
+        />
       </div>
     </div>
   </client-only>
@@ -58,4 +63,9 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="postcss" scoped></style>
+<style lang="postcss" scoped>
+.fullpage-wp {
+  transition: all 1s ease;
+  will-change: transform;
+}
+</style>
