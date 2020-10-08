@@ -37,9 +37,9 @@ export default Vue.extend({
 <style lang="postcss" scoped>
 .steps {
   right: 8px;
-  transform: translateY(40%);
 
-  @apply fixed h-full z-50 text-white-max overflow-hidden;
+  @apply fixed flex flex-col justify-center
+  h-full z-50 text-white-max overflow-hidden;
 
   &-button {
     --steps-button-size: 6px;
@@ -47,7 +47,7 @@ export default Vue.extend({
     width: var(--steps-button-size);
     height: var(--steps-button-size);
 
-    @apply bg-white-1000 my-3 rounded-full cursor-pointer;
+    @apply bg-white-1000 my-1 rounded-full cursor-pointer block;
 
     &.active,
     &:hover {

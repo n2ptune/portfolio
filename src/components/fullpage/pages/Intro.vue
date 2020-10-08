@@ -1,5 +1,6 @@
 <template>
   <PageLayout :key="$vnode.key">
+    <div class="patterns"></div>
     <transition name="fade-in-out">
       <div v-show="active" class="intro-outer">
         <div class="title">
@@ -67,6 +68,12 @@ export default Vue.extend({
 </script>
 
 <style lang="postcss" scoped>
+.patterns {
+  @apply fixed top-0 left-0 w-full h-full opacity-25;
+  background-color: #121212;
+  background-image: url('https://www.transparenttextures.com/patterns/gplay.png');
+}
+
 .intro-outer {
   @apply flex flex-wrap h-full relative justify-between flex-col;
 

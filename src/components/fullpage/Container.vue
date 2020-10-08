@@ -30,7 +30,9 @@ export default Vue.extend({
   data() {
     return {
       currentIndex: 0,
-      opts: {}
+      opts: {
+        movingFlag: true
+      }
     }
   },
 
