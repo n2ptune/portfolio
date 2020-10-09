@@ -45,13 +45,6 @@ export default Vue.extend({
     pages() {
       return [Intro, FirstProject, FairyProject]
     }
-  },
-
-  methods: {
-    moveTo(index: number) {
-      // @ts-ignore
-      this.$refs.fp.$fullpage.moveTo(index, true, false)
-    }
   }
 })
 </script>

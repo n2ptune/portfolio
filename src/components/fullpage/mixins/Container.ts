@@ -19,5 +19,12 @@ export default Vue.extend({
         this.currentIndex = next
       }
     }, 0)
+  },
+
+  methods: {
+    moveTo(index: number) {
+      // @ts-ignore
+      this.$refs[this.refName].$fullpage.moveTo(index, true, false)
+    }
   }
 })

@@ -6,6 +6,7 @@
         :idx="currentIndex"
         :range="horizontalPages.length"
         horizontal
+        @moveTo="moveTo"
       />
     </portal>
     <transition name="fade-in-out">
