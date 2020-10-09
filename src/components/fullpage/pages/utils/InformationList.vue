@@ -1,11 +1,11 @@
 <template>
   <div v-if="isBreak" class="break"></div>
-  <div v-else class="text-lg mx-1 my-2 xl:mx-4">
+  <div v-else class="text-xl md:text-2xl font-bold">
     <fa :icon="icon" class="mr-1 text-orange-300" />
     <p class="inline-block text-orange-300">
       {{ title }}
     </p>
-    <ul class="text-base py-3 px-1">
+    <ul v-if="!noList" class="text-base py-3 px-1">
       <li v-for="item in items" :key="item" class="my-1">
         {{ item }}
       </li>
@@ -29,6 +29,10 @@ export default {
       default: () => []
     },
     isBreak: {
+      type: Boolean,
+      default: false
+    },
+    noList: {
       type: Boolean,
       default: false
     }

@@ -24,7 +24,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import ContainerMixins from '@/components/fullpage/mixins/Container'
+import ContainerMixins from '@/components/fullpage/mixins/ContainerMixins'
 import Page101 from './projects/Page101.vue'
 import Page102 from './projects/Page102.vue'
 
