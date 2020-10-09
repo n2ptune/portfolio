@@ -15,3 +15,8 @@
     @apply opacity-100;
   }
 }
+
+.fullpage-wp.anim {
+  transition: all 1s ease !important;
+  will-change: transform;
+}

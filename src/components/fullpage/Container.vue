@@ -2,7 +2,8 @@
   <client-only>
     <div class="fullpage-container">
       <Steps :idx="currentIndex" :range="pages.length" @moveTo="moveTo" />
-      <div ref="fp" v-fullpage="opts" class="fullpage-wp">
+      <portal-target name="fullpage-container" />
+      <div :ref="refName" v-fullpage="opts" class="fullpage-wp">
         <component
           :is="page"
           v-for="(page, index) in pages"
@@ -17,43 +18,33 @@
 <script lang="ts">
 import Vue from 'vue'
 import Intro from '@/components/fullpage/pages/Intro.vue'
-import Information from '@/components/fullpage/pages/Information.vue'
+import FirstProject from '@/components/fullpage/pages/FirstProject.vue'
+import FairyProject from '@/components/fullpage/pages/FairyProject.vue'
 import Steps from '@/components/fullpage/Steps.vue'
+import ContainerMixins from '@/components/fullpage/mixins/Container'
 
 export default Vue.extend({
   components: {
     Intro,
-    Information,
+    FirstProject,
+    FairyProject,
     Steps
   },
 
+  // @ts-ignore
+  mixins: [ContainerMixins],
+
   data() {
     return {
-      currentIndex: 0,
-      opts: {
-        movingFlag: true
-      }
+      opts: {},
+      refName: 'fp'
     }
   },
 
   computed: {
     pages() {
-      return [Intro, Information]
+      return [Intro, FirstProject, FairyProject]
     }
-  },
-
-  mounted() {
-    window.setTimeout(() => {
-      // @ts-ignore
-      // 지연 옵션 바인딩
-      this.$refs.fp.$fullpage.opts.beforeChange = (
-        _el: HTMLElement,
-        _currnet: number,
-        next: number
-      ): void => {
-        this.currentIndex = next
-      }
-    }, 0)
   },
 
   methods: {
@@ -64,10 +55,3 @@ export default Vue.extend({
   }
 })
 </script>
-
-<style lang="postcss" scoped>
-.fullpage-wp {
-  transition: all 1s ease;
-  will-change: transform;
-}
-</style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="steps">
+  <div class="steps" :class="horizontal ? 'is-horizontal' : ''">
     <div
       v-for="(step, stepIndex) in range"
       :key="step"
@@ -23,6 +23,10 @@ export default Vue.extend({
     range: {
       type: Number,
       required: true
+    },
+    horizontal: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -53,6 +57,16 @@ export default Vue.extend({
     &:hover {
       @apply bg-white-max transition-colors duration-300;
     }
+  }
+}
+
+.steps.is-horizontal {
+  bottom: 8px;
+
+  @apply left-0 right-auto h-auto w-full flex-row;
+
+  & .steps-button {
+    @apply my-0 mx-1;
   }
 }
 </style>
