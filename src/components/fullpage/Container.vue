@@ -20,17 +20,9 @@ import Vue from 'vue'
 import Intro from '@/components/fullpage/pages/Intro.vue'
 import FirstProject from '@/components/fullpage/pages/FirstProject.vue'
 import FairyProject from '@/components/fullpage/pages/FairyProject.vue'
-import Steps from '@/components/fullpage/Steps.vue'
 import ContainerMixins from '@/components/fullpage/mixins/ContainerMixins'
 
 export default Vue.extend({
-  components: {
-    Intro,
-    FirstProject,
-    FairyProject,
-    Steps
-  },
-
   // @ts-ignore
   mixins: [ContainerMixins],
 

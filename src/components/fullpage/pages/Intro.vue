@@ -52,13 +52,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import PageLayout from '@/components/fullpage/PageLayout.vue'
 
 export default Vue.extend({
-  components: {
-    PageLayout
-  },
-
   props: {
     active: {
       type: Boolean

@@ -30,10 +30,7 @@ export default {
   css: [
     '~/assets/css/global.css',
     '~/assets/css/transition.css',
-    {
-      src: '~/assets/css/utils.pcss',
-      lang: 'postcss'
-    }
+    '~/assets/css/utils.css'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
