@@ -38,11 +38,12 @@
   @apply flex flex-wrap flex-row h-full;
 
   & .img-area {
+    @apply mx-auto flex items-center;
+
     & .kfba-main {
       width: 100%;
 
       @screen lg {
-        width: auto;
       }
     }
   }
