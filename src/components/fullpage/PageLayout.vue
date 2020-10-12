@@ -19,8 +19,12 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.page {
+  @apply bg-dark-surface text-white-max;
+}
+
 .page-padding {
-  @apply bg-dark-surface text-white-max p-4;
+  @apply p-4;
 
   @screen md {
     @apply p-6;
