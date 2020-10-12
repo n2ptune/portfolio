@@ -8,11 +8,7 @@
           <p>웹 개발</p>
         </div>
         <div class="text-base md:text-lg max-w-lg space-y-4 py-6">
-          <InformationList
-            :icon="['fas', 'stream']"
-            title="Overview"
-            :no-list="true"
-          />
+          <InformationList :icon="['fas', 'stream']" title="Overview" no-list />
           <p>대학교 재학 당시 산학 협력 활동으로 개발한 웹 페이지입니다.</p>
           <p>
             당시 HTML5, CSS, 자바스크립트의 기초 지식만 가지고 있는 상태에서
@@ -28,6 +24,11 @@
           class="kfba-main"
           alt="mockup-kfba-main"
         />
+        <img
+          src="@/assets/images/mockup-kfba-main-mobile.png"
+          class="kfba-main-mobile"
+          alt="kfba-main-mobile"
+        />
       </div>
     </div>
   </PageLayout>
@@ -38,12 +39,32 @@
   @apply flex flex-wrap flex-row h-full;
 
   & .img-area {
-    @apply mx-auto flex items-center;
+    @apply mx-auto flex items-center relative;
 
     & .kfba-main {
-      width: 100%;
+      left: 0;
+      z-index: 1;
+      width: 75%;
 
       @screen lg {
+        @apply relative;
+
+        width: 100%;
+        left: 15%;
+      }
+    }
+
+    & .kfba-main-mobile {
+      @apply absolute;
+
+      width: 50%;
+      right: 0;
+      z-index: 2;
+
+      @screen lg {
+        @apply static;
+
+        width: 100%;
       }
     }
   }

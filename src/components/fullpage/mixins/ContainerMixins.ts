@@ -1,30 +1,53 @@
 import Vue from 'vue'
+// import { EventBus } from '@/components/fullpage/pages/utils/ScrollEventBus'
 
 export default Vue.extend({
   data() {
     return {
-      currentIndex: 0
+      currentIndex: 0,
+      fullpage: {
+        opts: {
+          dir: ''
+        }
+      }
+    }
+  },
+
+  computed: {
+    isParent(): boolean {
+      return this.fullpage.opts.dir === 'v'
     }
   },
 
   mounted() {
     window.setTimeout(() => {
       // @ts-ignore
+      this.fullpage = this.$refs[this.refName].$fullpage
+
+      // @ts-ignore
       // 지연 옵션 바인딩
-      this.$refs[this.refName].$fullpage.opts.beforeChange = (
+      // 스크롤 시작하기 전
+      this.fullpage.opts.beforeChange = (
         _el: HTMLElement,
-        _currnet: number,
+        _current: number,
         next: number
-      ): void => {
+      ): boolean | void => {
         this.currentIndex = next
       }
+
+      // @ts-ignore
+      // 스크롤이 끝날 때
+      this.fullpage.opts.afterChange = (
+        _el: HTMLElement,
+        _current: number
+      ) => {}
     }, 0)
   },
 
   methods: {
     moveTo(index: number) {
       // @ts-ignore
-      this.$refs[this.refName].$fullpage.moveTo(index, true, false)
+      this.fullpage.moveTo(index, true, true)
     }
   }
 })

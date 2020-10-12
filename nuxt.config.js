@@ -74,7 +74,7 @@ export default {
   fontawesome: {
     component: 'fa',
     icons: {
-      solid: ['faGraduationCap', 'faBuilding', 'faInfo', 'faStream']
+      solid: ['faStream', 'faCubes', 'faLaptopCode']
     }
   }
 }
