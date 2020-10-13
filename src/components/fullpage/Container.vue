@@ -40,3 +40,15 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style lang="postcss">
+.stack-item {
+  @apply px-3 py-1 bg-white-300 inline-block mr-1 mb-1 rounded-lg;
+
+  & a {
+    &:hover {
+      @apply underline;
+    }
+  }
+}
+</style>

@@ -2,7 +2,12 @@
   <PageLayout :key="$vnode.key">
     <div class="inner">
       <div class="text-base md:text-lg max-w-lg py-6 space-y-6">
-        <InformationList :icon="['fas', 'cubes']" no-list title="Stack" />
+        <InformationList
+          :icon="['fas', 'cubes']"
+          :color="signature"
+          no-list
+          title="Stack"
+        />
         <ul>
           <li v-for="item in stack" :key="item" class="stack-item">
             {{ item }}
@@ -10,6 +15,7 @@
         </ul>
         <InformationList
           :icon="['fas', 'laptop-code']"
+          :color="signature"
           no-list
           title="Detail"
         />
@@ -24,15 +30,17 @@
           '일괄 출력' 기능을 개발하여 현재 페이지의 수검생들의 DOM을 이어붙여
           프린트를 가능케 했습니다.
         </p>
-        <p>
-          Link:
-          <a
-            href="http://kfba.or.kr/"
-            target="_blank"
-            class="hover:underline text-orange-300"
-            >한국외식음료협회</a
-          >
-        </p>
+        <InformationList
+          :icon="['fas', 'link']"
+          :color="signature"
+          title="Link"
+          no-list
+        />
+        <ul>
+          <li class="stack-item">
+            <a href="http://kfba.or.kr/" target="_blank"> 한국외식음료협회 </a>
+          </li>
+        </ul>
       </div>
       <div class="img-area">
         <img src="@/assets/images/kfba-excel-g.png" class="kfba-excel" />
@@ -44,6 +52,13 @@
 
 <script>
 export default {
+  props: {
+    signature: {
+      type: String,
+      required: true
+    }
+  },
+
   data: () => ({
     stack: [
       'HTML5',
@@ -61,10 +76,6 @@ export default {
 <style lang="postcss" scoped>
 .inner {
   @apply flex justify-between flex-wrap;
-
-  & .stack-item {
-    @apply px-3 py-1 bg-white-300 inline-block mr-1 mb-1 rounded-lg;
-  }
 
   & .img-area {
     @apply relative mx-auto text-center;
