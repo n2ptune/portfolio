@@ -21,6 +21,12 @@ export default {
 <style lang="postcss" scoped>
 .page {
   @apply bg-dark-surface text-white-max;
+
+  &.light {
+    @apply text-dark-surface;
+
+    background-color: #fff;
+  }
 }
 
 .page-padding {

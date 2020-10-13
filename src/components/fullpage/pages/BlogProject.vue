@@ -1,5 +1,5 @@
 <template>
-  <PageLayout :key="$vnode.key" nocss>
+  <PageLayout :key="$vnode.key">
     <portal to="fullpage-container">
       <Steps
         v-if="active"
@@ -14,9 +14,9 @@
         <component
           :is="page"
           v-for="(page, index) in horizontalPages"
-          :key="$vnode.key * 200 + index"
+          :key="$vnode.key * 400 + index"
           :active="currentIndex === index"
-          signature="orange-400"
+          signature="purple-400"
         />
       </div>
     </transition>
@@ -26,8 +26,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import ContainerMixins from '@/components/fullpage/mixins/ContainerMixins'
-import Page201 from './projects/Page201.vue'
-import Page202 from './projects/Page202.vue'
+import Page401 from './projects/Page401.vue'
 
 export default Vue.extend({
   // @ts-ignore
@@ -43,12 +42,12 @@ export default Vue.extend({
     opts: {
       dir: 'h'
     },
-    refName: 'fpF'
+    refName: 'fpB'
   }),
 
   computed: {
     horizontalPages() {
-      return [Page201, Page202]
+      return [Page401]
     }
   }
 })

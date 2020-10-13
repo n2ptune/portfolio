@@ -20,6 +20,8 @@ import Vue from 'vue'
 import Intro from '@/components/fullpage/pages/Intro.vue'
 import FirstProject from '@/components/fullpage/pages/FirstProject.vue'
 import FairyProject from '@/components/fullpage/pages/FairyProject.vue'
+import ShaftProject from '@/components/fullpage/pages/ShaftProject.vue'
+import BlogProject from '@/components/fullpage/pages/BlogProject.vue'
 import ContainerMixins from '@/components/fullpage/mixins/ContainerMixins'
 
 export default Vue.extend({
@@ -35,7 +37,14 @@ export default Vue.extend({
 
   computed: {
     pages() {
-      return [Intro, FirstProject, FairyProject]
+      // prettier-ignore
+      return [
+        Intro,
+        FirstProject,
+        FairyProject,
+        ShaftProject,
+        BlogProject
+      ]
     }
   }
 })
