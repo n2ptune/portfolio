@@ -1,3 +1,7 @@
 import Vue from 'vue'
 
-export const EventBus: Vue = new Vue()
+export const EventBus: Vue = new Vue({
+  data: {
+    isDark: true
+  }
+})

@@ -1,6 +1,7 @@
 <template>
   <div :style="{ height: innerHeight + 'px' }">
     <Nuxt />
+    <BottomLeft />
   </div>
 </template>
 

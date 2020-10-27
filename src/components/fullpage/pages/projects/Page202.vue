@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import { EventBus } from '@/components/fullpage/pages/utils/ScrollEventBus.ts'
+
 export default {
   props: {
     signature: {
@@ -27,6 +29,12 @@ export default {
     },
     active: {
       type: Boolean
+    }
+  },
+
+  watch: {
+    active(val) {
+      EventBus.$data.isDark = !val
     }
   }
 }
