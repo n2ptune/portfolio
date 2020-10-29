@@ -9,6 +9,7 @@
           v-for="(page, index) in pages"
           :key="index"
           :active="currentIndex === index"
+          @register-child="collect"
         />
       </div>
     </div>
@@ -23,6 +24,7 @@ import FairyProject from '@/components/fullpage/pages/FairyProject.vue'
 import ShaftProject from '@/components/fullpage/pages/ShaftProject.vue'
 import BlogProject from '@/components/fullpage/pages/BlogProject.vue'
 import ContainerMixins from '@/components/fullpage/mixins/ContainerMixins'
+import { EventBus } from '@/components/fullpage/pages/utils/ScrollEventBus.ts'
 
 export default Vue.extend({
   // @ts-ignore
@@ -31,8 +33,9 @@ export default Vue.extend({
   data() {
     return {
       opts: {},
-      refName: 'fp'
-    }
+      refName: 'fp',
+      fullpages: []
+    } as any
   },
 
   computed: {
@@ -45,6 +48,22 @@ export default Vue.extend({
         ShaftProject,
         BlogProject
       ]
+    }
+  },
+
+  watch: {
+    currentIndex(a) {
+      if (a !== 0) {
+        if (!EventBus.$data.isDark) {
+          EventBus.$data.isDark = true
+        }
+      }
+    }
+  },
+
+  methods: {
+    collect(fullpage: any) {
+      this.fullpages.push(fullpage)
     }
   }
 })

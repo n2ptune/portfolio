@@ -1,5 +1,4 @@
 import Vue from 'vue'
-// import { EventBus } from '@/components/fullpage/pages/utils/ScrollEventBus'
 
 export default Vue.extend({
   data() {
@@ -23,6 +22,10 @@ export default Vue.extend({
     window.setTimeout(() => {
       // @ts-ignore
       this.fullpage = this.$refs[this.refName].$fullpage
+
+      if (!this.isParent) {
+        this.$emit('register-child', this.fullpage)
+      }
 
       // @ts-ignore
       // 지연 옵션 바인딩

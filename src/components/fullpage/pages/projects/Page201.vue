@@ -132,9 +132,9 @@ export default {
     &-image {
       @apply w-full h-full;
 
-      background-image: url('~@/assets/images/mockup-fairy-full-height-screen.jpg');
+      background-image: url('~@/assets/images/mockups-many-device.jpg');
       background-repeat: no-repeat;
-      background-position: 45% center;
+      background-position: 46% center;
       background-size: cover;
     }
   }
