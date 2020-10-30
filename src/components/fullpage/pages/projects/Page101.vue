@@ -3,7 +3,7 @@
     <div class="inner">
       <div class="relative z-10">
         <div class="title">
-          <p :class="`text-${signature}`">01</p>
+          <p :class="signature">01</p>
           <p>한국외식음료협회</p>
           <p>웹 개발</p>
         </div>

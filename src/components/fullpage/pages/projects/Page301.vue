@@ -2,7 +2,7 @@
   <PageLayout :key="$vnode.key">
     <div class="inner">
       <div class="title">
-        <p :class="`text-${signature}`">03</p>
+        <p :class="signature">03</p>
         <p>Shaft</p>
       </div>
       <div class="text-base md:text-lg max-w-lg py-6 space-y-6">

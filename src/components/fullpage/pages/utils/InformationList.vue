@@ -1,8 +1,8 @@
 <template>
   <div v-if="isBreak" class="break"></div>
   <div v-else class="text-xl md:text-2xl font-bold">
-    <fa :icon="icon" :class="`text-${color}`" class="mr-1" />
-    <p :class="`text-${color}`" class="inline-block">
+    <fa :icon="icon" :class="color" class="mr-1" />
+    <p :class="color" class="inline-block">
       {{ title }}
     </p>
     <ul v-if="!noList" class="text-base py-3 px-1">
@@ -39,7 +39,7 @@ export default {
     color: {
       type: String,
       required: false,
-      default: 'orange-300'
+      default: 'text-orange-300'
     }
   }
 }

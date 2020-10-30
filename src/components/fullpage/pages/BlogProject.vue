@@ -16,7 +16,7 @@
           v-for="(page, index) in horizontalPages"
           :key="$vnode.key * 400 + index"
           :active="currentIndex === index"
-          signature="purple-400"
+          signature="text-purple-400"
         />
       </div>
     </transition>

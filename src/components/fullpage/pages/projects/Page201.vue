@@ -4,7 +4,7 @@
       <div class="inner-left">
         <div class="inner-left-content">
           <div class="title">
-            <p :class="`text-${signature}`">02</p>
+            <p :class="signature">02</p>
             <p>FAIRY</p>
           </div>
           <div class="text-base md:text-lg max-w-lg space-y-4 py-6">
