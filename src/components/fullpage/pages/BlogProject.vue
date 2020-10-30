@@ -1,5 +1,5 @@
 <template>
-  <PageLayout :key="$vnode.key">
+  <PageLayout :key="$vnode.key" nocss>
     <portal to="fullpage-container">
       <Steps
         v-if="active"

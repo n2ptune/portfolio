@@ -19,6 +19,30 @@
           생각해 블로그를 운영하고 있습니다. Gridsome이라는 오픈 소스를 이용해서
           JAMStack으로 Netlify에 배포하였습니다.
         </p>
+        <InformationList
+          :icon="['fas', 'cubes']"
+          :color="signature"
+          title="Stack"
+          no-list
+        />
+        <ul>
+          <li v-for="item in stack" :key="item" class="stack-item">
+            {{ item }}
+          </li>
+        </ul>
+        <InformationList
+          :icon="['fas', 'link']"
+          :color="signature"
+          title="Link"
+          no-list
+        />
+        <ul>
+          <li v-for="item in links" :key="item.title" class="stack-item">
+            <a :href="item.link" target="_blank">
+              {{ item.title }}
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </PageLayout>
@@ -31,7 +55,21 @@ export default {
       type: String,
       required: true
     }
-  }
+  },
+
+  data: () => ({
+    stack: ['Vue', 'Gridsome', 'TailwindCSS', 'Netlify'],
+    links: [
+      {
+        title: 'Blog',
+        link: 'https://imkh.dev/'
+      },
+      {
+        title: 'Github',
+        link: 'https://github.com/n2ptune/imkh.dev'
+      }
+    ]
+  })
 }
 </script>
 
