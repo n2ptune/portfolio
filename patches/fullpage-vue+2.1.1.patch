@@ -1,28 +1,5 @@
-diff --git a/node_modules/fullpage-vue/.babelrc b/node_modules/fullpage-vue/.babelrc
-old mode 100644
-new mode 100755
-diff --git a/node_modules/fullpage-vue/.npmignore b/node_modules/fullpage-vue/.npmignore
-old mode 100644
-new mode 100755
-diff --git a/node_modules/fullpage-vue/CAHNGELOG.md b/node_modules/fullpage-vue/CAHNGELOG.md
-old mode 100644
-new mode 100755
-diff --git a/node_modules/fullpage-vue/LICENSE b/node_modules/fullpage-vue/LICENSE
-old mode 100644
-new mode 100755
-diff --git a/node_modules/fullpage-vue/README.md b/node_modules/fullpage-vue/README.md
-old mode 100644
-new mode 100755
-diff --git a/node_modules/fullpage-vue/README_zh.md b/node_modules/fullpage-vue/README_zh.md
-old mode 100644
-new mode 100755
-diff --git a/node_modules/fullpage-vue/_config.yml b/node_modules/fullpage-vue/_config.yml
-old mode 100644
-new mode 100755
 diff --git a/node_modules/fullpage-vue/dist/fullpage.js b/node_modules/fullpage-vue/dist/fullpage.js
-old mode 100644
-new mode 100755
-index 0750dc3..20fcb50
+index 0750dc3..3d77e3a 100644
 --- a/node_modules/fullpage-vue/dist/fullpage.js
 +++ b/node_modules/fullpage-vue/dist/fullpage.js
 @@ -106,7 +106,7 @@ var Fullpage = function () {
@@ -47,36 +24,13 @@ index 0750dc3..20fcb50
  
              var i = 0,
                  length = this.pageEles.length,
-diff --git a/node_modules/fullpage-vue/docs/api.md b/node_modules/fullpage-vue/docs/api.md
-old mode 100644
-new mode 100755
-diff --git a/node_modules/fullpage-vue/examples/index.html b/node_modules/fullpage-vue/examples/index.html
-old mode 100644
-new mode 100755
-diff --git a/node_modules/fullpage-vue/examples/parallax.html b/node_modules/fullpage-vue/examples/parallax.html
-old mode 100644
-new mode 100755
-diff --git a/node_modules/fullpage-vue/examples/scroll.html b/node_modules/fullpage-vue/examples/scroll.html
-old mode 100644
-new mode 100755
-diff --git a/node_modules/fullpage-vue/rollup.config.js b/node_modules/fullpage-vue/rollup.config.js
-old mode 100644
-new mode 100755
-diff --git a/node_modules/fullpage-vue/src/fullpage.css b/node_modules/fullpage-vue/src/fullpage.css
-old mode 100644
-new mode 100755
-diff --git a/node_modules/fullpage-vue/src/index.js b/node_modules/fullpage-vue/src/index.js
-old mode 100644
-new mode 100755
-diff --git a/node_modules/fullpage-vue/src/libs/Animate.js b/node_modules/fullpage-vue/src/libs/Animate.js
-old mode 100644
-new mode 100755
-diff --git a/node_modules/fullpage-vue/src/libs/Fullpage.js b/node_modules/fullpage-vue/src/libs/Fullpage.js
-old mode 100644
-new mode 100755
-diff --git a/node_modules/fullpage-vue/src/libs/event.js b/node_modules/fullpage-vue/src/libs/event.js
-old mode 100644
-new mode 100755
-diff --git a/node_modules/fullpage-vue/src/libs/jqLite.js b/node_modules/fullpage-vue/src/libs/jqLite.js
-old mode 100644
-new mode 100755
+@@ -292,6 +294,9 @@ var Fullpage = function () {
+                 if (!debounce) {
+                     return;
+                 }
++                if (_this2.opts.dir === 'h') {
++                    return;
++                }
+                 debounce = false;
+                 clearTimeout(debounceTimer);
+                 debounceTimer = setTimeout(function () {

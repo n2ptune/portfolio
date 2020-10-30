@@ -9,7 +9,11 @@
 </template>
 
 <script>
+import IOMixins from '@/components/fullpage/mixins/IOMixins.ts'
+
 export default {
+  mixins: [IOMixins],
+
   props: {
     signature: {
       type: String,

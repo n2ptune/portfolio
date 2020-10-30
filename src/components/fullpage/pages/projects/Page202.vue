@@ -41,9 +41,11 @@
 </template>
 
 <script>
-import { EventBus } from '@/components/fullpage/pages/utils/ScrollEventBus.ts'
+import IOMixins from '@/components/fullpage/mixins/IOMixins.ts'
 
 export default {
+  mixins: [IOMixins],
+
   props: {
     signature: {
       type: String,
@@ -51,12 +53,6 @@ export default {
     },
     active: {
       type: Boolean
-    }
-  },
-
-  watch: {
-    active(val) {
-      EventBus.$data.isDark = !val
     }
   }
 }

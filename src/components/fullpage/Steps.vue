@@ -1,5 +1,8 @@
 <template>
-  <div class="steps" :class="horizontal ? 'is-horizontal' : ''">
+  <div
+    class="steps"
+    :class="[horizontal ? 'is-horizontal' : '', isDark ? 'dark' : 'light']"
+  >
     <div
       v-for="(step, stepIndex) in range"
       :key="step"
@@ -12,6 +15,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { EventBus } from './pages/utils/ScrollEventBus'
 
 export default Vue.extend({
   props: {
@@ -30,6 +34,12 @@ export default Vue.extend({
     }
   },
 
+  computed: {
+    isDark() {
+      return EventBus.$data.isDark
+    }
+  },
+
   methods: {
     moveTo(index: number) {
       this.$emit('moveTo', index)
@@ -43,7 +53,7 @@ export default Vue.extend({
   right: 8px;
 
   @apply fixed flex flex-col justify-center
-  h-full z-50 text-white-max overflow-hidden;
+  h-full z-50 overflow-hidden;
 
   &-button {
     --steps-button-size: 6px;
@@ -51,11 +61,29 @@ export default Vue.extend({
     width: var(--steps-button-size);
     height: var(--steps-button-size);
 
-    @apply bg-white-1000 my-1 rounded-full cursor-pointer block;
+    @apply my-1 rounded-full cursor-pointer block
+    transition-colors duration-300;
+  }
 
-    &.active,
-    &:hover {
-      @apply bg-white-max transition-colors duration-300;
+  &.light {
+    & .steps-button {
+      @apply bg-gray-200;
+
+      &.active,
+      &:hover {
+        @apply bg-gray-600;
+      }
+    }
+  }
+
+  &.dark {
+    & .steps-button {
+      @apply bg-white-1000;
+
+      &.active,
+      &:hover {
+        @apply bg-white-max;
+      }
     }
   }
 }

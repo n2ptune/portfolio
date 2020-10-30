@@ -6,7 +6,8 @@ export default Vue.extend({
       currentIndex: 0,
       fullpage: {
         opts: {
-          dir: ''
+          dir: '',
+          movingFlag: true
         }
       }
     }
