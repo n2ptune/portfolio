@@ -25,7 +25,7 @@
         <p>
           클라이언트와 웹은 Vue로 만들어져 있고, 서버는 Node.js을 사용해
           Firebase Cloud Functions에 배포하고 모두
-          <span class="font-bold" :class="`text-${signature}`"
+          <span class="font-bold" :class="signature"
             >Firebase를 적극 활용했습니다.</span
           >
         </p>

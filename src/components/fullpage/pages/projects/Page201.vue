@@ -105,7 +105,7 @@ export default {
     }
 
     &-content {
-      @apply relative px-4 py-2;
+      @apply relative px-4 py-2 block;
 
       z-index: 4;
 
@@ -114,7 +114,14 @@ export default {
       }
 
       @screen lg {
-        @apply p-16;
+        @apply flex flex-col h-full justify-center items-center pb-16;
+      }
+
+      & > div:first-of-type {
+        @screen lg {
+          @apply relative;
+          left: -11.5%;
+        }
       }
     }
   }
