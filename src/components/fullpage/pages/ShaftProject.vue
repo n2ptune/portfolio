@@ -29,7 +29,6 @@ import ContainerMixins from '@/components/fullpage/mixins/ContainerMixins'
 import Page301 from './projects/Page301.vue'
 
 export default Vue.extend({
-  // @ts-ignore
   mixins: [ContainerMixins],
 
   props: {

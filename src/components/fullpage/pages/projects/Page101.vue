@@ -1,7 +1,7 @@
 <template>
   <PageLayout :key="$vnode.key">
     <div class="inner">
-      <div class="relative z-10">
+      <div class="relative z-10 lg:mx-auto">
         <div class="title">
           <p :class="signature">01</p>
           <p>한국외식음료협회</p>
@@ -52,10 +52,18 @@ export default {
 
 <style lang="postcss" scoped>
 .inner {
-  @apply flex flex-wrap flex-row h-full;
+  @apply flex flex-col h-full;
+
+  @screen lg {
+    @apply flex-row justify-center items-center;
+  }
 
   & .img-area {
-    @apply mx-auto flex items-center relative;
+    @apply flex relative;
+
+    @screen lg {
+      @apply mx-auto;
+    }
 
     & .kfba-main {
       left: 0;

@@ -27,7 +27,6 @@ import ContainerMixins from '@/components/fullpage/mixins/ContainerMixins'
 import { EventBus } from '@/components/fullpage/pages/utils/ScrollEventBus.ts'
 
 export default Vue.extend({
-  // @ts-ignore
   mixins: [ContainerMixins],
 
   data() {
@@ -70,12 +69,19 @@ export default Vue.extend({
 </script>
 
 <style lang="postcss">
-.stack-item {
-  @apply px-3 py-1 bg-white-300 inline-block mr-1 mb-1 rounded-lg;
+.page {
+  .stack-item {
+    @apply px-3 py-1 bg-white-300 inline-block mr-1 mb-1 rounded-lg;
 
-  & a {
-    &:hover {
-      @apply underline;
+    & a {
+      &:hover {
+        @apply underline;
+      }
+    }
+  }
+  &.light {
+    .stack-item {
+      @apply bg-gray-100;
     }
   }
 }

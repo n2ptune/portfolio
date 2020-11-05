@@ -1,7 +1,7 @@
 <template>
   <PageLayout :key="$vnode.key">
     <div class="inner">
-      <div class="inner-left">
+      <div class="lg:mx-auto">
         <div class="title">
           <p :class="signature">03</p>
           <p>Shaft</p>
@@ -97,7 +97,7 @@ export default {
   @apply w-full h-full flex flex-col;
 
   @screen lg {
-    @apply flex-row;
+    @apply flex-row justify-center items-center;
   }
 
   & .image-wrap {

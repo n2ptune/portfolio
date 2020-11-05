@@ -29,7 +29,6 @@ import ContainerMixins from '@/components/fullpage/mixins/ContainerMixins'
 import Page401 from './projects/Page401.vue'
 
 export default Vue.extend({
-  // @ts-ignore
   mixins: [ContainerMixins],
 
   props: {
