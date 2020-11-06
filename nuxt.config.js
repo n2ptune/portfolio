@@ -8,7 +8,6 @@ export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 
-  // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'portfolio',
     meta: [
@@ -24,7 +23,24 @@ export default {
         href:
           'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Sans:wght@400;700&display=swap'
       }
-    ]
+    ],
+    script: [
+      {
+        hid: 'ga',
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-35E6KRRJW3',
+        async: true
+      },
+      {
+        hid: 'ga-2',
+        innerHTML: `window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-35E6KRRJW3');`,
+        type: 'text/javascript',
+        charset: 'utf-8'
+      }
+    ],
+    __dangerouslyDisableSanitizers: ['script']
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
