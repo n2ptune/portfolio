@@ -14,9 +14,9 @@
         <component
           :is="page"
           v-for="(page, index) in horizontalPages"
-          :key="$vnode.key * 100 + index"
+          :key="$vnode.key * 200 + index"
           :active="currentIndex === index"
-          signature="text-blue-300"
+          signature="text-orange-400"
         />
       </div>
     </transition>
@@ -26,8 +26,8 @@
 <script lang="ts">
 import Vue from 'vue'
 import ContainerMixins from '@/components/fullpage/mixins/ContainerMixins'
-import Page101 from './projects/Page101.vue'
-import Page102 from './projects/Page102.vue'
+import Page201 from './page/Page201.vue'
+import Page202 from './page/Page202.vue'
 
 export default Vue.extend({
   // @ts-ignore
@@ -43,12 +43,12 @@ export default Vue.extend({
     opts: {
       dir: 'h'
     },
-    refName: 'fpH'
+    refName: 'fpF'
   }),
 
   computed: {
     horizontalPages() {
-      return [Page101, Page102]
+      return [Page201, Page202]
     }
   }
 })

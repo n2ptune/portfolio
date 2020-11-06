@@ -26,7 +26,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import ContainerMixins from '@/components/fullpage/mixins/ContainerMixins'
-import Page401 from './projects/Page401.vue'
+import Page401 from './page/Page401.vue'
 
 export default Vue.extend({
   mixins: [ContainerMixins],

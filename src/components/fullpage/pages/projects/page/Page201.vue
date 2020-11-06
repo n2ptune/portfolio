@@ -120,7 +120,7 @@ export default {
       & > div:first-of-type {
         @screen lg {
           @apply relative;
-          left: -11.5%;
+          left: -170px;
         }
       }
     }

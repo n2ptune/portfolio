@@ -14,23 +14,20 @@
         <component
           :is="page"
           v-for="(page, index) in horizontalPages"
-          :key="$vnode.key * 200 + index"
+          :key="$vnode.key * 100 + index"
           :active="currentIndex === index"
-          signature="text-orange-400"
+          signature="text-blue-300"
         />
       </div>
     </transition>
   </PageLayout>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import ContainerMixins from '@/components/fullpage/mixins/ContainerMixins'
-import Page201 from './projects/Page201.vue'
-import Page202 from './projects/Page202.vue'
+<script>
+import ContainerMixins from '../../mixins/ContainerMixins'
+import Page501 from './page/Page501.vue'
 
-export default Vue.extend({
-  // @ts-ignore
+export default {
   mixins: [ContainerMixins],
 
   props: {
@@ -43,13 +40,13 @@ export default Vue.extend({
     opts: {
       dir: 'h'
     },
-    refName: 'fpF'
+    refName: 'fpT'
   }),
 
   computed: {
     horizontalPages() {
-      return [Page201, Page202]
+      return [Page501]
     }
   }
-})
+}
 </script>

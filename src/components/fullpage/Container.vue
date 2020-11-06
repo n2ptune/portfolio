@@ -1,28 +1,27 @@
 <template>
-  <client-only>
-    <div class="fullpage-container">
-      <Steps :idx="currentIndex" :range="pages.length" @moveTo="moveTo" />
-      <portal-target name="fullpage-container" />
-      <div :ref="refName" v-fullpage="opts" class="fullpage-wp">
-        <component
-          :is="page"
-          v-for="(page, index) in pages"
-          :key="index"
-          :active="currentIndex === index"
-          @register-child="collect"
-        />
-      </div>
+  <div class="fullpage-container">
+    <Steps :idx="currentIndex" :range="pages.length" @moveTo="moveTo" />
+    <portal-target name="fullpage-container" />
+    <div :ref="refName" v-fullpage="opts" class="fullpage-wp">
+      <component
+        :is="page"
+        v-for="(page, index) in pages"
+        :key="index"
+        :active="currentIndex === index"
+        @register-child="collect"
+      />
     </div>
-  </client-only>
+  </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import Intro from '@/components/fullpage/pages/Intro.vue'
-import FirstProject from '@/components/fullpage/pages/FirstProject.vue'
-import FairyProject from '@/components/fullpage/pages/FairyProject.vue'
-import ShaftProject from '@/components/fullpage/pages/ShaftProject.vue'
-import BlogProject from '@/components/fullpage/pages/BlogProject.vue'
+import Intro from '@/components/fullpage/pages/projects/Intro.vue'
+import FirstProject from '@/components/fullpage/pages/projects/FirstProject.vue'
+import FairyProject from '@/components/fullpage/pages/projects/FairyProject.vue'
+import ShaftProject from '@/components/fullpage/pages/projects/ShaftProject.vue'
+import BlogProject from '@/components/fullpage/pages/projects/BlogProject.vue'
+import TechPage from '@/components/fullpage/pages/tech/Page.vue'
 import ContainerMixins from '@/components/fullpage/mixins/ContainerMixins'
 import { EventBus } from '@/components/fullpage/pages/utils/ScrollEventBus.ts'
 
@@ -45,7 +44,8 @@ export default Vue.extend({
         FirstProject,
         FairyProject,
         ShaftProject,
-        BlogProject
+        BlogProject,
+        TechPage
       ]
     }
   },

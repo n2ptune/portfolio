@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import IOMixins from '../../mixins/IOMixins'
+import IOMixins from '@/components/fullpage/mixins/IOMixins'
 
 export default {
   mixins: [IOMixins],
