@@ -22,6 +22,39 @@ export default {
         as: 'style',
         href:
           'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Sans:wght@400;700&display=swap'
+      },
+      {
+        rel: 'shortcut icon',
+        href: '/favicon.ico'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/favicon-16x16.png',
+        sizes: '16x16'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/favicon-32x32.png',
+        sizes: '32x32'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/favicon-192x192.png',
+        sizes: '192x192'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/favicon-512x512.png',
+        sizes: '512x512'
+      },
+      {
+        rel: 'apple-touch-icon',
+        href: '/apple-touch-icon.png',
+        sizes: '180x180'
       }
     ],
     script: [
