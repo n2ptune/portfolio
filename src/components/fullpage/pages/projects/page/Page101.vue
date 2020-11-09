@@ -36,18 +36,30 @@
         />
       </div>
     </div>
+    <MoveFlag
+      v-if="pager.total > 1"
+      :ref-key="fullpageRef"
+      :parent-node="refVNode"
+      :index="index"
+      :total="pager.total"
+    />
   </PageLayout>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+import PageMixins from '@/components/fullpage/mixins/PageMixins'
+
+export default Vue.extend({
+  mixins: [PageMixins],
+
   props: {
     signature: {
       type: String,
       required: true
     }
   }
-}
+})
 </script>
 
 <style lang="postcss" scoped>

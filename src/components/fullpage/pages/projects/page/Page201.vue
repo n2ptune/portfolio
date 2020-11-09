@@ -15,9 +15,10 @@
               no-list
             />
             <p>
-              FAIRY는 웹 페이지의 고객센터를 서비스와 통합시켜 접근성을 높여주는
-              웹 서비스입니다. 마크다운으로 표시할 내용을 작성할 수 있으며 매우
-              쉽고 빠르게 웹 페이지와 통합시킬 수 있습니다.
+              Fairy는 어떤 웹 페이지에나 삽입시킬 수 있는 서비스 접근성을 향상
+              시킬 수 있게 도와주는 Vue와 Node.js 풀스택 프로젝트입니다. 코드 몇
+              줄로 개발자 없이 서비스를 이용하는 데에 어려움을 겪는 사용자에게
+              서비스에 대한 도움말 혹은 힌트를 제공할 수 있습니다.
             </p>
             <InformationList
               :icon="['fas', 'cubes']"
@@ -53,11 +54,23 @@
         <div class="inner-right-image"></div>
       </div>
     </div>
+    <MoveFlag
+      v-if="pager.total > 1"
+      :ref-key="fullpageRef"
+      :parent-node="refVNode"
+      :index="index"
+      :total="pager.total"
+      right-color="text-orange-500"
+    />
   </PageLayout>
 </template>
 
 <script>
+import PageMixins from '@/components/fullpage/mixins/PageMixins'
+
 export default {
+  mixins: [PageMixins],
+
   props: {
     signature: {
       type: String,

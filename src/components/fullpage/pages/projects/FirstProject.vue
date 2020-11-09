@@ -15,7 +15,9 @@
           :is="page"
           v-for="(page, index) in horizontalPages"
           :key="$vnode.key * 100 + index"
+          :index="index"
           :active="currentIndex === index"
+          :pager="pager"
           signature="text-blue-300"
         />
       </div>

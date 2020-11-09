@@ -124,7 +124,15 @@ export default {
   fontawesome: {
     component: 'fa',
     icons: {
-      solid: ['faStream', 'faCubes', 'faLaptopCode', 'faLink', 'faEnvelope'],
+      solid: [
+        'faStream',
+        'faCubes',
+        'faLaptopCode',
+        'faLink',
+        'faEnvelope',
+        'faChevronLeft',
+        'faChevronRight'
+      ],
       brands: ['faGithub']
     }
   }

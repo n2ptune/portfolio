@@ -9,7 +9,18 @@ export default Vue.extend({
           dir: '',
           movingFlag: true
         }
+      },
+      pager: {
+        total: null
       }
+    }
+  },
+
+  provide() {
+    return {
+      // @ts-expect-error
+      fullpageRef: this.refName,
+      refVNode: this.$refs
     }
   },
 
@@ -45,6 +56,8 @@ export default Vue.extend({
         _el: HTMLElement,
         _current: number
       ) => {}
+
+      this.pager.total = (this.fullpage as any).total
     }, 0)
   },
 
