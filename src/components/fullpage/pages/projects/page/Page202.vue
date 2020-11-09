@@ -46,7 +46,8 @@
       :parent-node="refVNode"
       :index="index"
       :total="pager.total"
-      left-color="text-orange-500"
+      left-color="text-orange-400 hover:text-orange-600"
+      right-color="text-orange-400 hover:text-orange-600"
     />
   </PageLayout>
 </template>

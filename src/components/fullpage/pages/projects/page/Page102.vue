@@ -53,6 +53,7 @@
       :parent-node="refVNode"
       :index="index"
       :total="pager.total"
+      left-color="text-blue-400 hover:text-blue-600"
     />
   </PageLayout>
 </template>
