@@ -9,7 +9,7 @@ export default {
   target: 'static',
 
   head: {
-    title: 'portfolio',
+    title: '신입 프론트엔드 개발자 포트폴리오 | 이경환(vue2598@gmail.com)',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

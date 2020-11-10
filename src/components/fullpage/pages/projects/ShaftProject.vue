@@ -29,7 +29,6 @@
 import Vue from 'vue'
 import ContainerMixins from '@/components/fullpage/mixins/ContainerMixins'
 import Page301 from './page/Page301.vue'
-import Page302 from './page/Page302.vue'
 
 export default Vue.extend({
   mixins: [ContainerMixins],
@@ -49,7 +48,7 @@ export default Vue.extend({
 
   computed: {
     horizontalPages() {
-      return [Page301, Page302]
+      return [Page301]
     }
   }
 })
