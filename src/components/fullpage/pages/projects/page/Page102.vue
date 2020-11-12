@@ -87,7 +87,7 @@ export default {
 
 <style lang="postcss" scoped>
 .inner {
-  @apply flex justify-between flex-wrap;
+  @apply flex justify-center flex-wrap w-full h-full items-center;
 
   & .img-area {
     @apply relative mx-auto text-center;
