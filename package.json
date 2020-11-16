@@ -9,7 +9,8 @@
     "generate": "nuxt-ts generate",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint": "yarn lint:js",
-    "postinstall": "npx patch-package"
+    "postinstall": "npx patch-package",
+    "serve": "serve dist -p 4030 -n"
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.0",
@@ -33,7 +34,6 @@
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "postcss-nested": "5.0.1",
     "prettier": "^2.1.1"
   }
 }
