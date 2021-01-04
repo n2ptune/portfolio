@@ -4,7 +4,7 @@
     <transition name="fade-in-out">
       <div v-show="active" class="intro-outer">
         <div class="title">
-          <p>2020 <span class="text-orange-300">신입</span></p>
+          <p>2021 <span class="text-orange-300">신입</span></p>
           <p class="text-orange-300">프론트엔드 개발자</p>
           <p>포트폴리오</p>
         </div>
