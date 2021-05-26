@@ -4,7 +4,7 @@
     <transition name="fade-in-out">
       <div v-show="active" class="intro-outer">
         <div class="title">
-          <p>2021 <span class="text-orange-300">신입</span></p>
+          <p>2021</p>
           <p class="text-orange-300">프론트엔드 개발자</p>
           <p>포트폴리오</p>
         </div>
@@ -14,7 +14,7 @@
             style="border-left-width: 3px"
           >
             <div class="text-base md:text-2xl lg:text-3xl font-bold">
-              이경환
+              n2ptune
             </div>
             <div class="text-sm md:text-lg lg:text-xl font-semibold">
               LEE KYUNGHWAN

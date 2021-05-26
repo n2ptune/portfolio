@@ -1,6 +1,10 @@
 import { resolve } from 'path'
 
 export default {
+  generate: {
+    dir: 'pages'
+  },
+
   server: {
     host: '0.0.0.0',
     port: 3001
@@ -9,7 +13,7 @@ export default {
   target: 'static',
 
   head: {
-    title: '신입 프론트엔드 개발자 포트폴리오 | 이경환(vue2598@gmail.com)',
+    title: '프론트엔드 개발자 포트폴리오',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
